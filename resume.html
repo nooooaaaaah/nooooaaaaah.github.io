@@ -1,155 +1,395 @@
-<html><head><style>/* Define the page layout with a professional and clean color theme */
+<html>
+    <head>
+        <style>
+            /* Define the page layout with a professional and clean color theme */
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, sans-serif;
-    padding: 20px;
-    margin: 0 auto;
-    color: #121314;
-    overflow: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    Roboto, "Helvetica Neue", Arial, sans-serif;
+                padding: 20px;
+                margin: 0 auto;
+                color: #121314;
+                overflow: auto;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
 
-h1 {
-    font-size: 22px;
-    color: #f18c8c;
-    margin-bottom: 8px;
-    font-weight: 700;
-    text-align: center;
-    border-bottom: 2px solid #f18c8c;
-    padding-bottom: 2px;
-}
+            h1 {
+                font-size: 22px;
+                color: #f18c8c;
+                margin-bottom: 8px;
+                font-weight: 700;
+                text-align: center;
+                border-bottom: 2px solid #f18c8c;
+                padding-bottom: 2px;
+            }
 
-h2 {
-    font-size: 18px;
-    margin-bottom: 6px;
-    color: #266b76;
-    font-weight: 600;
-    border-bottom: 1px solid #266b76;
-    padding-bottom: 2px;
-}
+            h2 {
+                font-size: 18px;
+                margin-bottom: 6px;
+                color: #266b76;
+                font-weight: 600;
+                border-bottom: 1px solid #266b76;
+                padding-bottom: 2px;
+            }
 
-h3 {
-    font-size: 16px;
-    margin-bottom: 4px;
-    color: #6a4375;
-}
+            h3 {
+                font-size: 16px;
+                margin-bottom: 4px;
+                color: #6a4375;
+            }
 
-p {
-    font-size: 13px;
-    line-height: 1.6;
-    padding: 2px;
-    padding-bottom: 0;
-    color: #121314;
-}
+            p {
+                font-size: 13px;
+                line-height: 1.6;
+                padding: 2px;
+                padding-bottom: 0;
+                color: #121314;
+            }
 
-p:not(blockquote p) {
-    text-align: justify;
-}
+            p:not(blockquote p) {
+                text-align: justify;
+            }
 
-blockquote p {
-    text-align: center;
-    line-height: normal;
-    padding: 0;
-    border-left: none;
-    margin-left: 0;
-    padding-left: 1em;
-}
+            blockquote p {
+                text-align: center;
+                line-height: normal;
+                padding: 0;
+                border-left: none;
+                margin-left: 0;
+                padding-left: 1em;
+            }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
 
-ul li {
-    font-size: 13px;
-    padding: 2px 0;
-    margin-left: 18px;
-    line-height: 1.4;
-    position: relative;
-}
+            ul li {
+                font-size: 13px;
+                padding: 2px 0;
+                margin-left: 18px;
+                line-height: 1.4;
+                position: relative;
+            }
 
-ul li::before {
-    content: "";
-}
+            ul li::before {
+                content: "";
+            }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 6px;
-}
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 6px;
+            }
 
-thead th {
-    display: none;
-}
+            thead th {
+                display: none;
+            }
 
-tbody td {
-    padding: 4px;
-    border: none;
-}
+            tbody td {
+                padding: 4px;
+                border: none;
+            }
 
-tbody tr:hover {
-    background-color: #e1e8e6;
-}
+            tbody tr:hover {
+                background-color: #e1e8e6;
+            }
 
-table {
-    font-size: 13px;
-    line-height: 1.4;
-}
+            table {
+                font-size: 13px;
+                line-height: 1.4;
+            }
 
-a {
-    color: #121314;
-    text-decoration: none;
-    cursor: pointer;
-}
+            a {
+                color: #121314;
+                text-decoration: none;
+                cursor: pointer;
+            }
 
-#nas-name {
-    font-size: 26px;
-    font-weight: 800;
-    color: #f18c8c;
-    text-align: center;
-    margin-bottom: 12px;
-}
+            #nas-name {
+                font-size: 26px;
+                font-weight: 800;
+                color: #f18c8c;
+                text-align: center;
+                margin-bottom: 12px;
+            }
 
-#nas-contact {
-    text-align: center;
-    font-size: 13px;
-    margin-bottom: 20px;
-}
+            #nas-contact {
+                text-align: center;
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
 
-#nas-exp,
-#nas-projects {
-    margin-top: 12px;
-}
+            #nas-exp,
+            #nas-projects {
+                margin-top: 12px;
+            }
 
-#nas-job,
-#nas-proj {
-    margin-bottom: 10px;
-}
+            #nas-job,
+            #nas-proj {
+                margin-bottom: 10px;
+            }
 
-#nas-proj {
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+            #nas-proj {
+                margin-bottom: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
 
-#nas-skills,
-#nas-education,
-#nas-job h3,
-#nas-proj h3 {
-    font-size: 14px;
-    color: #4a946e;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
+            #nas-skills,
+            #nas-education,
+            #nas-job h3,
+            #nas-proj h3 {
+                font-size: 14px;
+                color: #4a946e;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
 
-#nas-skills,
-#nas-education {
-    margin-top: 12px;
-}
-</style></head><body><h1 id="nas-name">Noah Spielman</h1><blockquote><p><strong>(301) 580-7073 | <a href="mailto:nspielman96@gmail.com">nspielman96@gmail.com</a> | <a href="http://github.com/nooooaaaaah">github.com/nooooaaaaah</a></strong></p></blockquote><ul><li>Experienced full-stack software engineer with specialization in Go and C#, having a solid background in testing and CI/CD methodologies. Demonstrated expertise in designing efficient backend systems, enhancing database operations, and deploying scalable cloud solutions. Passionate about continuous learning and development, dedicated to solving complex technological problems.</li></ul><div class="education"><h2 id="nas-education">Education</h2><h3>B.S. in Information Systems | Dec 2022 | Colorado State University</h3><ul><li>Minor: Computer Science. Studied system architecture, programming, and data security, alongside business principles.</li></ul></div><div class="skills"><h2 id="nas-skills">Skills</h2><table><thead><tr><th><strong>Category</strong></th><th><strong>Skills</strong></th></tr></thead><tbody><tr><td><strong>Programming Languages</strong></td><td>Go, Python, TypeScript/JavaScript, C#, SQL, Bash, HTML, CSS</td></tr><tr><td><strong>Database Management</strong></td><td>Postgres, SQLite, Redis, MongoDB, Elasticsearch, Database Design, Query Optimization, Data Warehousing</td></tr><tr><td><strong>Development Practices</strong></td><td>Git, Agile, TDD, BDD, CI/CD, Version Control, Test Automation</td></tr><tr><td><strong>Cloud and DevOps</strong></td><td>Cloudflare, Azure, Linode, Docker, Kubernetes, AWS, GCP, Terraform, Ansible, Serverless Architecture, Microservices, Cloud Security</td></tr><tr><td><strong>Cybersecurity</strong></td><td>Threat Modeling, Auth, Incident Response, Network Security, SDLC, Vulnerability Management, Data Privacy</td></tr><tr><td><strong>Tools</strong></td><td>Pandas, Bash, Make, Grafana, Bubble Tea, Brightdata, Linux, GitHub, Docker Compose, Coolify</td></tr><tr><td><strong>Skills</strong></td><td>Networks, SDLC, Data Structures and Algorithms, Software Testing, API Design, Containerization, Debugging</td></tr></tbody></table></div><div class="experience"><h2 id="nas-exp">Experience</h2><h3 id="nas-job">Freelance Software Engineer | Feb 2023 - Present</h3><ul><li>Created custom software solutions using Go, C# .Net, and Python, improving client productivity.</li><li>Designed and deployed backend systems for data processing and automation, increasing operational efficiency.</li><li>Delivered full-stack solutions meeting client needs, streamlining workflows effectively.</li></ul><h3 id="nas-job-1">Technical Support Specialist | Brody Art Concepts | Feb 2020 - Present</h3><ul><li>Improved website performance, leading to 20% higher user engagement.</li><li>Provided IT support, reducing system downtime by 30% and enhancing technical stability.</li><li>Conducted regular system audits and implemented security measures, improving data protection by 25%.</li><li>Collaborated with the design team to optimize the user interface, increasing user satisfaction.</li></ul><h3 id="nas-job-2">Help Desk Technician | Colorado State University College of Business | Sept 2022 - Feb 2023</h3><ul><li>Enhanced IT infrastructure, boosting response times by 40% for both faculty and students.</li><li>Optimized the ticketing system, resulting in faster and more efficient resolution of technical requests.</li></ul><h3 id="nas-job-3">Logistical Coordinator | Cowell Nursery | Aug 2017 - July 2019</h3><ul><li>Improved inventory and logistics processes, cutting order fulfillment time from 4 hours to 1 hour, and increasing employee satisfaction by 40%.</li><li>Implemented a new inventory management system, which streamlined operations and reduced errors by 25%.</li></ul><h3 id="nas-job-4">Information Systems Intern | Ntiva | May 2015 - Sept 2015</h3><ul><li>Managed e-waste disposal and secure data destruction initiatives, supporting environmental efforts.</li><li>Assisted with troubleshooting hardware and software issues.</li><li>Supported network setup and maintenance, improving connectivity and performance.</li><li>Provided technical support for remote employees, enhancing remote working efficiency.</li></ul></div><div class="client projects"><h2 id="nas-projects">Client Projects</h2><h3 id="nas-proj">ERP Workflow Automation | TOA-USA</h3><ul><li>Improved tools for the Plex ERP system, reducing task completion time by 60% and enhancing overall workflow.</li><li>Developed KPI visualizations, providing actionable insights for better decisions.</li></ul><h3 id="nas-proj-1">Data Extraction | THE NTWRK</h3><ul><li>Provided data insights that increased marketing efficiency by 50%.</li><li>Automated data extraction, reducing manual efforts by 70% and raising campaign ROI by 25%.</li></ul><h3 id="nas-proj-2">Reservations System | ME</h3><ul><li>Created a dynamic reservation system with real-time updates and automated processes.</li><li>Deployed a containerized Go application to improve reservation success rates on platforms like Resy, achieving an 80% success rate.</li></ul></div></body></html>
+            #nas-skills,
+            #nas-education {
+                margin-top: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="nas-name">Noah Spielman</h1>
+        <blockquote>
+            <p>
+                <strong
+                    >(301) 580-7073 |
+                    <a href="mailto:nspielman96@gmail.com"
+                        >nspielman96@gmail.com</a
+                    >
+                    |
+                    <a href="http://github.com/nooooaaaaah"
+                        >github.com/nooooaaaaah</a
+                    ></strong
+                >
+            </p>
+        </blockquote>
+        <ul>
+            <li>
+                Experienced full-stack software engineer with specialization in
+                Go and C#, having a solid background in testing and CI/CD
+                methodologies. Demonstrated expertise in designing efficient
+                backend systems, enhancing database operations, and deploying
+                scalable cloud solutions. Passionate about continuous learning
+                and development, dedicated to solving complex technological
+                problems.
+            </li>
+        </ul>
+        <div class="education">
+            <h2 id="nas-education">Education</h2>
+            <h3>
+                B.S. in Information Systems | Dec 2022 | Colorado State
+                University
+            </h3>
+            <ul>
+                <li>
+                    Minor: Computer Science. Studied system architecture,
+                    programming, and data security, alongside business
+                    principles.
+                </li>
+            </ul>
+        </div>
+        <div class="skills">
+            <h2 id="nas-skills">Skills</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th><strong>Category</strong></th>
+                        <th><strong>Skills</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Programming Languages</strong></td>
+                        <td>
+                            Go, Python, TypeScript/JavaScript, C#, SQL, Bash,
+                            HTML, CSS
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Database Management</strong></td>
+                        <td>
+                            Postgres, SQLite, Redis, MongoDB, Elasticsearch,
+                            Database Design, Query Optimization, Data
+                            Warehousing
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Development Practices</strong></td>
+                        <td>
+                            Git, Agile, TDD, BDD, CI/CD, Version Control, Test
+                            Automation
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cloud and DevOps</strong></td>
+                        <td>
+                            Cloudflare, Azure, Linode, Docker, Kubernetes, AWS,
+                            GCP, Terraform, Ansible, Serverless Architecture,
+                            Microservices, Cloud Security
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cybersecurity</strong></td>
+                        <td>
+                            Threat Modeling, Auth, Incident Response, Network
+                            Security, SDLC, Vulnerability Management, Data
+                            Privacy
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tools</strong></td>
+                        <td>
+                            Pandas, Bash, Make, Grafana, Bubble Tea, Brightdata,
+                            Linux, GitHub, Docker Compose, Coolify
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Skills</strong></td>
+                        <td>
+                            Networks, SDLC, Data Structures and Algorithms,
+                            Software Testing, API Design, Containerization,
+                            Debugging
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="experience">
+            <h2 id="nas-exp">Experience</h2>
+            <h3 id="nas-job">
+                Freelance Software Engineer | Feb 2023 - Present
+            </h3>
+            <ul>
+                <li>
+                    Created custom software solutions using Go, C# .Net, and
+                    Python, improving client productivity.
+                </li>
+                <li>
+                    Designed and deployed backend systems for data processing
+                    and automation, increasing operational efficiency.
+                </li>
+                <li>
+                    Delivered full-stack solutions meeting client needs,
+                    streamlining workflows effectively.
+                </li>
+            </ul>
+            <h3 id="nas-job-1">
+                Technical Support Specialist | Brody Art Concepts | Feb 2020 -
+                Present
+            </h3>
+            <ul>
+                <li>
+                    Improved website performance, leading to 20% higher user
+                    engagement.
+                </li>
+                <li>
+                    Provided IT support, reducing system downtime by 30% and
+                    enhancing technical stability.
+                </li>
+                <li>
+                    Conducted regular system audits and implemented security
+                    measures, improving data protection by 25%.
+                </li>
+                <li>
+                    Collaborated with the design team to optimize the user
+                    interface, increasing user satisfaction.
+                </li>
+            </ul>
+            <h3 id="nas-job-2">
+                Help Desk Technician | Colorado State University College of
+                Business | Sept 2022 - Feb 2023
+            </h3>
+            <ul>
+                <li>
+                    Enhanced IT infrastructure, boosting response times by 40%
+                    for both faculty and students.
+                </li>
+                <li>
+                    Optimized the ticketing system, resulting in faster and more
+                    efficient resolution of technical requests.
+                </li>
+            </ul>
+            <h3 id="nas-job-3">
+                Logistical Coordinator | Cowell Nursery | Aug 2017 - July 2019
+            </h3>
+            <ul>
+                <li>
+                    Improved inventory and logistics processes, cutting order
+                    fulfillment time from 4 hours to 1 hour, and increasing
+                    employee satisfaction by 40%.
+                </li>
+                <li>
+                    Implemented a new inventory management system, which
+                    streamlined operations and reduced errors by 25%.
+                </li>
+            </ul>
+            <h3 id="nas-job-4">
+                Information Systems Intern | Ntiva | May 2015 - Sept 2015
+            </h3>
+            <ul>
+                <li>
+                    Managed e-waste disposal and secure data destruction
+                    initiatives, supporting environmental efforts.
+                </li>
+                <li>
+                    Assisted with troubleshooting hardware and software issues.
+                </li>
+                <li>
+                    Supported network setup and maintenance, improving
+                    connectivity and performance.
+                </li>
+                <li>
+                    Provided technical support for remote employees, enhancing
+                    remote working efficiency.
+                </li>
+            </ul>
+        </div>
+        <div class="client projects">
+            <h2 id="nas-projects">Client Projects</h2>
+            <h3 id="nas-proj">ERP Workflow Automation | TOA-USA</h3>
+            <ul>
+                <li>
+                    Improved tools for the Plex ERP system, reducing task
+                    completion time by 60% and enhancing overall workflow.
+                </li>
+                <li>
+                    Developed KPI visualizations, providing actionable insights
+                    for better decisions.
+                </li>
+            </ul>
+            <h3 id="nas-proj-1">Data Extraction | THE NTWRK</h3>
+            <ul>
+                <li>
+                    Provided data insights that increased marketing efficiency
+                    by 50%.
+                </li>
+                <li>
+                    Automated data extraction, reducing manual efforts by 70%
+                    and raising campaign ROI by 25%.
+                </li>
+            </ul>
+            <h3 id="nas-proj-2">Reservations System | ME</h3>
+            <ul>
+                <li>
+                    Created a dynamic reservation system with real-time updates
+                    and automated processes.
+                </li>
+                <li>
+                    Deployed a containerized Go application to improve
+                    reservation success rates on platforms like Resy, achieving
+                    an 80% success rate.
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
