@@ -1,159 +1,149 @@
 <html>
     <head>
         <style>
-            /* Define the page layout with a professional and clean color theme */
+            /* Define the page layout with a crazy reactive theme like an apple product launch */
 
             body {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                    Roboto, "Helvetica Neue", Arial, sans-serif;
+                font-family: "Comic Sans MS", cursive, sans-serif;
                 padding: 20px;
                 margin: 0 auto;
-                color: #121314;
+                color: #41a3b0;
+                background-color: #000;
                 overflow: auto;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
                 display: flex;
                 flex-direction: column;
                 gap: 12px;
-            }
-
-            h1 {
-                font-size: 22px;
-                color: #f18c8c;
-                margin-bottom: 8px;
-                font-weight: 700;
-                text-align: center;
-                border-bottom: 2px solid #f18c8c;
-                padding-bottom: 2px;
-            }
-
-            h2 {
-                font-size: 18px;
-                margin-bottom: 6px;
-                color: #266b76;
-                font-weight: 600;
-                border-bottom: 1px solid #266b76;
-                padding-bottom: 2px;
-            }
-
-            h3 {
-                font-size: 16px;
-                margin-bottom: 4px;
-                color: #6a4375;
-            }
-
-            p {
-                font-size: 13px;
-                line-height: 1.6;
-                padding: 2px;
-                padding-bottom: 0;
-                color: #121314;
-            }
-
-            p:not(blockquote p) {
-                text-align: justify;
-            }
-
-            blockquote p {
-                text-align: center;
-                line-height: normal;
-                padding: 0;
-                border-left: none;
-                margin-left: 0;
-                padding-left: 1em;
-            }
-
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            ul li {
-                font-size: 13px;
-                padding: 2px 0;
-                margin-left: 18px;
-                line-height: 1.4;
                 position: relative;
+                z-index: 1;
+                animation:
+                    colorChange 10s infinite alternate,
+                    morphBackground 10s infinite alternate;
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><text y="24" font-size="24">🍏</text></svg>'),
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><text y="24" font-size="24">🍎</text></svg>'),
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><text y="24" font-size="24">🍏</text></svg>'),
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><text y="24" font-size="24">🍎</text></svg>');
+                background-size: 50px 50px;
+                background-repeat: repeat;
+                animation:
+                    colorChange 10s infinite alternate,
+                    morphBackground 10s infinite alternate,
+                    spinBackground 5s linear infinite;
             }
 
-            ul li::before {
+            @keyframes spinBackground {
+                0% {
+                    background-position:
+                        0 0,
+                        50px 50px,
+                        100px 100px,
+                        150px 150px;
+                }
+                100% {
+                    background-position:
+                        100px 100px,
+                        150px 150px,
+                        200px 200px,
+                        250px 250px;
+                }
+            }
+
+            body::before {
                 content: "";
-            }
-
-            table {
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
-                border-collapse: collapse;
-                margin-top: 6px;
+                height: 100%;
+                background-color: rgba(255, 0, 0, 0.5);
+                z-index: -1;
+                animation: shapeChange 10s infinite alternate;
             }
 
-            thead th {
-                display: none;
+            @keyframes colorChange {
+                0% {
+                    background-color: #030eaf;
+                }
+                50% {
+                    background-color: #002b36;
+                }
+                100% {
+                    background-color: #030e2f;
+                }
             }
 
-            tbody td {
-                padding: 4px;
-                border: none;
+            @keyframes morphBackground {
+                0% {
+                    border-radius: 0%;
+                }
+                50% {
+                    border-radius: 50%;
+                }
+                100% {
+                    border-radius: 10%;
+                }
             }
 
-            tbody tr:hover {
-                background-color: #e1e8e6;
-            }
-
-            table {
-                font-size: 13px;
-                line-height: 1.4;
-            }
-
-            a {
-                color: #121314;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-            #nas-name {
-                font-size: 26px;
-                font-weight: 800;
-                color: #f18c8c;
-                text-align: center;
-                margin-bottom: 12px;
-            }
-
-            #nas-contact {
-                text-align: center;
-                font-size: 13px;
-                margin-bottom: 20px;
-            }
-
-            #nas-exp,
-            #nas-projects {
-                margin-top: 12px;
-            }
-
-            #nas-job,
-            #nas-proj {
-                margin-bottom: 10px;
-            }
-
-            #nas-proj {
-                margin-bottom: 10px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            #nas-skills,
-            #nas-education,
-            #nas-job h3,
-            #nas-proj h3 {
-                font-size: 14px;
-                color: #4a946e;
-                font-weight: 600;
-                margin-bottom: 4px;
-            }
-
-            #nas-skills,
-            #nas-education {
-                margin-top: 12px;
+            @keyframes shapeChange {
+                0% {
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                }
+                12.5% {
+                    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                }
+                25% {
+                    clip-path: polygon(
+                        25% 0%,
+                        75% 0%,
+                        100% 50%,
+                        75% 100%,
+                        25% 100%,
+                        0% 50%
+                    );
+                }
+                37.5% {
+                    clip-path: polygon(
+                        0% 25%,
+                        50% 0%,
+                        100% 25%,
+                        75% 50%,
+                        100% 75%,
+                        50% 100%,
+                        0% 75%,
+                        25% 50%
+                    );
+                }
+                50% {
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                }
+                62.5% {
+                    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                }
+                75% {
+                    clip-path: polygon(
+                        25% 0%,
+                        75% 0%,
+                        100% 50%,
+                        75% 100%,
+                        25% 100%,
+                        0% 50%
+                    );
+                }
+                87.5% {
+                    clip-path: polygon(
+                        0% 25%,
+                        50% 0%,
+                        100% 25%,
+                        75% 50%,
+                        100% 75%,
+                        50% 100%,
+                        0% 75%,
+                        25% 50%
+                    );
+                }
+                100% {
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                }
             }
         </style>
     </head>
